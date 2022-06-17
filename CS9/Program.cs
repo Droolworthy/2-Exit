@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CS9
 {
@@ -6,19 +6,21 @@ namespace CS9
     {
         static void Main(string[] args)
         {
-            string exit = "exit";
-            string tempString;
+            int tryCount = 10;
+            string userInput;
+            string stopProgram;
+            Console.WriteLine("Для запуска программы введите сообщение.");
+            userInput = Console.ReadLine(); 
+            stopProgram = "Для остановки программы введите exit"; 
 
-            while (true)
+            for (int i = 0; i < tryCount; i++)
+
+            if (userInput != "exit")
             {
-                Console.WriteLine("Для продолжения нажмите 'Enter'. Для выхода введите " + exit);
-                tempString = Console.ReadLine();
-
-                if (tempString == exit)
-                {
-                    break;
-                }
+                Console.WriteLine(stopProgram);
+                userInput = Console.ReadLine();
             }
+            Console.WriteLine("Программа остановлена.");
         }
     }
 }
